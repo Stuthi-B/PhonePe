@@ -1,6 +1,7 @@
 import pandas as pd
 import os
 import json
+import _mysql_connector as sql
 
 # dataframe for aggregate transaction
 transaction_path1="/content/pulse/data/aggregated/transaction/country/india/state/"
@@ -118,3 +119,4 @@ for i in top_state_list2:
               user_clm3['Quater'].append(int(k.strip('.json')))
 Top_users=pd.DataFrame(user_clm3)
 
+mydb=mysql.connect(host='localhost', database='phonepe', user='root', password='Kewal@123')
